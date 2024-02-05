@@ -1,0 +1,1158 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np"
+      ],
+      "metadata": {
+        "id": "souAcLECH19Y"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##Q1. For the given NumPy array, how will you calculate the transpose of the same?\n",
+        "###x = [[11,21,13],[14,15,16],[27,18,29]]\n"
+      ],
+      "metadata": {
+        "id": "sr6VfgZ2SEej"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x = [[11,21,13],[14,15,16],[27,18,29]]"
+      ],
+      "metadata": {
+        "id": "-74RoT4-JkYn"
+      },
+      "execution_count": 26,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "A = np.array(x)\n",
+        "A"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jDul1UtzSqHS",
+        "outputId": "0e684822-5d94-49ae-88e2-859c13de270d"
+      },
+      "execution_count": 28,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[11, 21, 13],\n",
+              "       [14, 15, 16],\n",
+              "       [27, 18, 29]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 28
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np.transpose(A)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "lj4Wv5lCSv8Z",
+        "outputId": "878f898b-093c-4981-a860-f4798e41d60f"
+      },
+      "execution_count": 29,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[11, 14, 27],\n",
+              "       [21, 15, 18],\n",
+              "       [13, 16, 29]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 29
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "A.T"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "p1ypieOMS00x",
+        "outputId": "80189824-d022-4d47-9ee7-debf84841595"
+      },
+      "execution_count": 30,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[11, 14, 27],\n",
+              "       [21, 15, 18],\n",
+              "       [13, 16, 29]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 30
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q2. For the given numpy array, what will be the standard deviation of the same?\n",
+        "x = [[11,21,13],[14,15,16],[27,18,29]]\n",
+        "A = np.array(x)\n",
+        "print(A)"
+      ],
+      "metadata": {
+        "id": "WUNSwp3eS5hC"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np.std(A)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6LZ64IMDTgxo",
+        "outputId": "4773c518-1e55-401d-af4a-addf990606c7"
+      },
+      "execution_count": 31,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "5.902499993463745"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 31
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np.mean(A)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "yitvzse-Tjgs",
+        "outputId": "13b6327b-6221-4dcc-c0cd-b279f78b000a"
+      },
+      "execution_count": 32,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "18.22222222222222"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 32
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q3. For the given numpy array, how will you do element wise traversal?"
+      ],
+      "metadata": {
+        "id": "P3reO9wOTmOB"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x = np.ones(shape=(3,3), dtype='int')\n",
+        "x"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "5TG-qMZ8T8AR",
+        "outputId": "e4046cbb-8441-4d1f-bc8c-8250dc992d72"
+      },
+      "execution_count": 34,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[1, 1, 1],\n",
+              "       [1, 1, 1],\n",
+              "       [1, 1, 1]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 34
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in x.flatten():\n",
+        "  print(i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "E4em3NTXT_7n",
+        "outputId": "60b775ce-a42c-462c-afd9-808d32946c07"
+      },
+      "execution_count": 36,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n",
+            "1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q4. For the given numpy array, how will you do row wise traversal?\n",
+        "x = np.zeros((3,2), dtype='int')"
+      ],
+      "metadata": {
+        "id": "YysJH3KZUbC8"
+      },
+      "execution_count": 37,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KnPDQ6cJVDCL",
+        "outputId": "cde9f2d2-696b-48ad-e9fd-aaebefffe23d"
+      },
+      "execution_count": 38,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[0, 0],\n",
+              "       [0, 0],\n",
+              "       [0, 0]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 38
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for i in x:\n",
+        "  print(i)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "jCUW0PNkVDYR",
+        "outputId": "45a239d0-cee1-42af-ad47-ba9c16560b4f"
+      },
+      "execution_count": 40,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "[0 0]\n",
+            "[0 0]\n",
+            "[0 0]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q5. For the given numpy array, what will be the determinant of the same?\n",
+        "x = np.zeros((3,3), dtype='int')"
+      ],
+      "metadata": {
+        "id": "3pM2UCYSVfjD"
+      },
+      "execution_count": 41,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "FnbMndSmVvPQ",
+        "outputId": "de0e30d0-5f6d-45da-a63e-faaa19d07716"
+      },
+      "execution_count": 42,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[0, 0, 0],\n",
+              "       [0, 0, 0],\n",
+              "       [0, 0, 0]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 42
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np.linalg.det(x)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EXfeEmjVWJBH",
+        "outputId": "f94f180e-9ee8-4cc7-9be5-4ef110ea45c6"
+      },
+      "execution_count": 43,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "0.0"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 43
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q6. What is the output of the following code?\n",
+        "A = np.array([14,25,16])\n",
+        "B = np.array([17,21,31])\n",
+        "np.hstack((A,B))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "NHLA-xQrWN2e",
+        "outputId": "51db5f82-49aa-42f7-9181-3d4a6475db3a"
+      },
+      "execution_count": 44,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([14, 25, 16, 17, 21, 31])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 44
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q7. What is the output of the following code?\n",
+        "A = np.array([14,25,16])\n",
+        "B = np.array([17,21,31])\n",
+        "np.row_stack((A,B))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "AAQLiZMlWa-_",
+        "outputId": "087bea75-c07a-4e7d-a9f6-cf672f4ec862"
+      },
+      "execution_count": 45,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[14, 25, 16],\n",
+              "       [17, 21, 31]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 45
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q8. What is the output of the following code?\n",
+        "A = np.array([14,25,16])\n",
+        "B = np.array([17,21,31])\n",
+        "np.column_stack((A,B))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6d2rSr3KXrNQ",
+        "outputId": "b8a2a160-9bdd-43f2-b144-281f0e0240c0"
+      },
+      "execution_count": 46,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[14, 17],\n",
+              "       [25, 21],\n",
+              "       [16, 31]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 46
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q9. What is the output of the following code?\n",
+        "A = np.array([14,25,16])\n",
+        "B = np.array([17,21,31])"
+      ],
+      "metadata": {
+        "id": "Bn8c9ny-X-Lu"
+      },
+      "execution_count": 51,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np.stack((A,B), axis=0)     #axis matters"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "z7IfmRL0Y8cZ",
+        "outputId": "1bb16c49-d786-458a-aa55-6e6431ecefe3"
+      },
+      "execution_count": 52,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[14, 25, 16],\n",
+              "       [17, 21, 31]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 52
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q10. What is the output of the following code?\n",
+        "A = np.array([14,25,16])\n",
+        "B = np.array([17,21,31])\n",
+        "np.vstack((A,B))          #vertical stack"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "QoWBrqU-Y-yr",
+        "outputId": "0c8217d6-df59-4f55-e110-33d32e289992"
+      },
+      "execution_count": 53,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[14, 25, 16],\n",
+              "       [17, 21, 31]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 53
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q11. What is the output of the following code?\n",
+        "A = np.array([[1,2],[3,4],[4,5],[5,6]])\n",
+        "np.hsplit(A,2)               #horizontally splitting columnwise"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "pO1cL3pGZxLv",
+        "outputId": "b1457269-9cd3-4ec9-ba43-c2c86617a161"
+      },
+      "execution_count": 63,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[array([[1],\n",
+              "        [3],\n",
+              "        [4],\n",
+              "        [5]]), array([[2],\n",
+              "        [4],\n",
+              "        [5],\n",
+              "        [6]])]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 63
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "A.shape"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mwg8OOF2axdY",
+        "outputId": "d857d369-83bf-4c61-820e-6f74c687c865"
+      },
+      "execution_count": 64,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(4, 2)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 64
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q12. What is the output of the following code?\n",
+        "A = np.array([[[1,2],[3,4],[4,5],[5,6]]])\n",
+        "np.dsplit(A, 2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "dOAuxQCDa2br",
+        "outputId": "9b2b1242-0f87-4438-c876-24a0c653d24b"
+      },
+      "execution_count": 97,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[array([[[1],\n",
+              "         [3],\n",
+              "         [4],\n",
+              "         [5]]]), array([[[2],\n",
+              "         [4],\n",
+              "         [5],\n",
+              "         [6]]])]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 97
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "A.shape"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "nsJB6-YqcHiG",
+        "outputId": "ebafb0d3-7da6-4c6d-bc81-e461ea98d78e"
+      },
+      "execution_count": 70,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(1, 4, 2)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 70
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x = np.arange(16.0).reshape(2, 2, 4)\n",
+        "x"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "u-2mRTJScp7H",
+        "outputId": "dfa4443f-0049-409c-8cc5-71259917a1ca"
+      },
+      "execution_count": 71,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[[ 0.,  1.,  2.,  3.],\n",
+              "        [ 4.,  5.,  6.,  7.]],\n",
+              "\n",
+              "       [[ 8.,  9., 10., 11.],\n",
+              "        [12., 13., 14., 15.]]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 71
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np.dsplit(x, 2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "6EVceLbPdHO5",
+        "outputId": "fb617685-70c3-4eed-e28b-2f3d0bf4c53d"
+      },
+      "execution_count": 72,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[array([[[ 0.,  1.],\n",
+              "         [ 4.,  5.]],\n",
+              " \n",
+              "        [[ 8.,  9.],\n",
+              "         [12., 13.]]]), array([[[ 2.,  3.],\n",
+              "         [ 6.,  7.]],\n",
+              " \n",
+              "        [[10., 11.],\n",
+              "         [14., 15.]]])]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 72
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q13.What is the output of the following code?\n",
+        "A = np.array([[1,2],[3,4],[4,5],[5,6]])\n",
+        "A"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "YvuqynBSdMmM",
+        "outputId": "5a821ea6-174e-463c-8f5e-6407840477e8"
+      },
+      "execution_count": 73,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[1, 2],\n",
+              "       [3, 4],\n",
+              "       [4, 5],\n",
+              "       [5, 6]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 73
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np.vsplit(A, 2)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "rAu-KLWrefkp",
+        "outputId": "c1414012-9eb2-4b1f-bd36-7f926a70973e"
+      },
+      "execution_count": 74,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[array([[1, 2],\n",
+              "        [3, 4]]), array([[4, 5],\n",
+              "        [5, 6]])]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 74
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q14. What is the output of the following code?\n",
+        "A = np.array([[1,2],[3,4],[4,5],[5,6]])"
+      ],
+      "metadata": {
+        "id": "ct4plRgBehGV"
+      },
+      "execution_count": 75,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "A"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "y2a6o7Xge5tO",
+        "outputId": "62b5d7fe-9250-44dc-d2bd-78238a9767f2"
+      },
+      "execution_count": 76,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[1, 2],\n",
+              "       [3, 4],\n",
+              "       [4, 5],\n",
+              "       [5, 6]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 76
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np.array_split(A, 2, axis=1)    #columnwise"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "EtaII9j2e6_c",
+        "outputId": "34d9eda7-daff-4c23-88d7-e3ac23ee197b"
+      },
+      "execution_count": 77,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[array([[1],\n",
+              "        [3],\n",
+              "        [4],\n",
+              "        [5]]), array([[2],\n",
+              "        [4],\n",
+              "        [5],\n",
+              "        [6]])]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 77
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q15. What is the output of the following code?\n",
+        "A = np.array([[1,2],[3,4],[4,5],[5,6],[7,8],[8,9]])"
+      ],
+      "metadata": {
+        "id": "S5MuF-HMfBXi"
+      },
+      "execution_count": 80,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "np.split(A, 2, axis=0)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "qyMI4u-JfQMZ",
+        "outputId": "f8d901f8-2600-41d8-e67d-5bdcee754acb"
+      },
+      "execution_count": 81,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[array([[1, 2],\n",
+              "        [3, 4],\n",
+              "        [4, 5]]), array([[5, 6],\n",
+              "        [7, 8],\n",
+              "        [8, 9]])]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 81
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q16. What is the output of the following code?\n",
+        "A = np.array([14,25,16])\n",
+        "B = np.array([17,21,31])"
+      ],
+      "metadata": {
+        "id": "dKa0V711fRdl"
+      },
+      "execution_count": 83,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x = np.dstack((B,A))"
+      ],
+      "metadata": {
+        "id": "emsz5kUFfuoa"
+      },
+      "execution_count": 88,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "A.shape"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "_SNYszkJfwEW",
+        "outputId": "b97fa6a7-4d12-402c-e906-48de4c968edb"
+      },
+      "execution_count": 86,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(3,)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 86
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "B.shape"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "DawrUehFgWKq",
+        "outputId": "4cbdb193-44cc-4f11-cdb2-5ff412b6038f"
+      },
+      "execution_count": 87,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(3,)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 87
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "x.shape"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "G7PdS_UVgZuI",
+        "outputId": "ff732238-feb7-4651-ab7b-d9da56188501"
+      },
+      "execution_count": 89,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "(1, 3, 2)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 89
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q17. For the given numpy array, what will be the cross product?\n",
+        "A = np.array([[4,2,4],[1,2,0],[3,9,0]])\n",
+        "B = np.array([[2,2,1],[4,2,0],[2,5,3]])\n",
+        "np.cross(A,B)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "3XqobvqzgdPu",
+        "outputId": "aad4e914-4714-4ce9-c774-dcfbd79d6f90"
+      },
+      "execution_count": 90,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[-6,  4,  4],\n",
+              "       [ 0,  0, -6],\n",
+              "       [27, -9, -3]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 90
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q18. For the given numpy array, what will be the output?\n",
+        "A = np.array([[4,2,4],[1,2,0],[3,9,0]])\n",
+        "A*2"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Fkc-7QcDhexI",
+        "outputId": "10c1f571-6dd1-41dc-f55c-74373c878b8e"
+      },
+      "execution_count": 91,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[ 8,  4,  8],\n",
+              "       [ 2,  4,  0],\n",
+              "       [ 6, 18,  0]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 91
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q19. For the given numpy array, what will be the vector multiplication result?\n",
+        "A = np.array([[4,2,4],[1,2,0],[3,9,0]])\n",
+        "B = np.array([1,2,1])\n",
+        "\n",
+        "np.dot(A,B)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WvIZcfmLiGZS",
+        "outputId": "46682453-e633-49e4-db50-8b6824d5ccd7"
+      },
+      "execution_count": 93,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([12,  5, 21])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 93
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Q20. For the given numpy array, what will be the matrix multiplication result?\n",
+        "A = np.array([[4,2,4],[1,2,0],[3,9,0]])\n",
+        "B = np.array([[1,2,7],[4,2,2],[3,4,12]])\n",
+        "\n",
+        "np.dot(A, B)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "9ubwy1QziXQW",
+        "outputId": "f6c97888-f586-47d3-91c7-180e4949c7e5"
+      },
+      "execution_count": 94,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "array([[24, 28, 80],\n",
+              "       [ 9,  6, 11],\n",
+              "       [39, 24, 39]])"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 94
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "VX75B9RhilJP"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
